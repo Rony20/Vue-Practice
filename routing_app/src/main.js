@@ -5,13 +5,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { routes } from './routes' 
 
 Vue.use(VueRouter);
+Vue.config.productionTip = false
 
 const router = new VueRouter({
   routes,
   mode: 'history'
 })
 
-Vue.config.productionTip = false
+router.beforeEach((to, from, next) => {
+  console.log('Global BeforeEach')
+  next();
+})
 
 new Vue({
   render: h => h(App),

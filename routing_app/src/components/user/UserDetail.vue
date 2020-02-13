@@ -18,7 +18,7 @@ export default {
             link: { 
                 name: 'userEdit',
                  params: {
-                     id: $route.params.id
+                     id: this.$route.params.id
                      }, 
                  query: { 
                      locale: 'en', 
