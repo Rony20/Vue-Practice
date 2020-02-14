@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button class="btn btn-primary" @click="increment"> Increment </button> &nbsp;
-    <button class="btn btn-primary" @click="decrement"> Decrement </button>
+    <button class="btn btn-primary" @click="increment(100)"> Increment </button> &nbsp;
+    <button class="btn btn-primary" @click="decrement(50)"> Decrement </button>
   </div>
 </template>
 
@@ -22,3 +22,15 @@ export default {
 <style>
 
 </style>
+// What mapActions does behind the scene is it will create methods in methods property of component 
+// Like in our example
+// methods:
+//  {
+//    ...mapActions([
+//      'increment',
+//      'decrement'
+//    ])
+//  }
+//  'increment' is treated like
+//  this.$store.dispach('increment') -> this will point to action named 'increment' in store.js file
+// We can also pass argument to this actions/mutations like this.$store.dispatch('increment', val)
