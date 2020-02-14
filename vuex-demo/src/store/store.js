@@ -25,5 +25,13 @@ export const store = new Vuex.Store({
         decrement: state => {
             state.counter--
         }
+    },
+    actions:{
+        increment: context => {
+            context.commit('increment')
+        },
+        decrement: context => {
+            context.commit('decrement')
+        }
     }
 })
